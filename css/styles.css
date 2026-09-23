@@ -1,0 +1,1407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 30px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #2878e8;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.menu a {
+    font-weight: 500;
+}
+
+.login-button {
+    background: #2878e8;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    padding: 10px 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 430px;
+
+    background-image: url("../assets/images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+
+    margin: auto;
+
+    padding: 50px 30px;
+
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    background: #2878e8;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+}
+
+
+/* =========================
+   DESTACADAS
+========================= */
+
+.featured {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 50px 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.section-header h2 {
+    font-size: 30px;
+}
+
+.section-header a {
+    color: #2878e8;
+}
+
+
+/* =========================
+   NEWS CARDS
+========================= */
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+.news-card img {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.news-card-content {
+    padding: 18px;
+}
+
+.news-category {
+    font-size: 12px;
+    font-weight: bold;
+
+    color: #2878e8;
+}
+
+.news-card h3 {
+    margin: 8px 0;
+
+    font-size: 18px;
+}
+
+.news-date {
+    font-size: 13px;
+    color: #777777;
+}
+
+.favorite-button {
+    border: none;
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    float: right;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   PÁGINA DE NOTICIAS
+========================================== */
+
+.news-page {
+    background: #ffffff;
+    min-height: 650px;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.news-page-header {
+    margin-bottom: 30px;
+}
+
+.news-page-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.news-page-header p {
+    color: #666666;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   BUSCADOR Y CATEGORÍAS
+========================================== */
+
+.news-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.search-box {
+    display: flex;
+    width: 320px;
+    height: 42px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 14px;
+    font-size: 14px;
+}
+
+.search-box button {
+    width: 50px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   CATEGORÍAS
+========================================== */
+
+.categories {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-button {
+    border: none;
+    background: #eeeeee;
+    color: #333333;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.category-button:hover {
+    background: #dddddd;
+}
+
+.category-button.active {
+    background: #2878e8;
+    color: white;
+}
+
+
+/* ==========================================
+   CARDS DEL LISTADO
+========================================== */
+
+#news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#news-list .news-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
+}
+
+#news-list .news-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+#news-list .news-card-content {
+    padding: 18px;
+}
+
+#news-list .news-category {
+    font-size: 12px;
+    font-weight: bold;
+    color: #2878e8;
+}
+
+#news-list .news-card h3 {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+#news-list .news-date {
+    font-size: 13px;
+    color: #777777;
+}
+
+
+/* ==========================================
+   ACCIONES DE LA CARD
+========================================== */
+
+.news-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.read-more {
+    color: #222222;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.read-more:hover {
+    color: #2878e8;
+}
+
+.news-card-actions .favorite-button {
+    float: none;
+}
+
+
+/* ==========================================
+   SIN RESULTADOS
+========================================== */
+
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.no-results h3 {
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    color: #777777;
+}
+
+
+/* ==========================================
+   PAGINACIÓN
+========================================== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 45px;
+}
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #eeeeee;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.pagination button:hover {
+    background: #dddddd;
+}
+
+.pagination .active {
+    background: #2878e8;
+    color: white;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .news-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    #news-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .news-container {
+        padding: 30px 20px;
+    }
+
+    .news-page-header h1 {
+        font-size: 28px;
+    }
+
+    #news-list {
+        grid-template-columns: 1fr;
+    }
+
+    .categories {
+        justify-content: flex-start;
+    }
+
+}
+
+/* ==========================================
+   DETALLE DE NOTICIA
+========================================== */
+
+.detail-page {
+    background: #ffffff;
+    min-height: 650px;
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.detail-breadcrumb {
+    color: #777777;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.detail-breadcrumb a {
+    color: #2878e8;
+}
+
+
+/* CONTENIDO */
+
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* IMAGEN */
+
+.detail-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+/* INFORMACIÓN */
+
+.detail-information {
+    padding-top: 10px;
+}
+
+.detail-information h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.detail-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+.detail-text {
+    color: #555555;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+
+/* BOTONES */
+
+.detail-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.detail-button {
+    border: none;
+    background: #2878e8;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.detail-button.secondary {
+    background: #eeeeee;
+    color: #222222;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-information h1 {
+        font-size: 30px;
+    }
+
+    .detail-image img {
+        height: 300px;
+    }
+
+}
+
+/* ==========================================
+   FAVORITOS
+========================================== */
+
+.favorites-page {
+    background: #ffffff;
+    min-height: 650px;
+}
+
+.favorites-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+.favorites-header {
+    margin-bottom: 35px;
+}
+
+.favorites-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.favorites-header p {
+    color: #666666;
+}
+
+
+/* SIN FAVORITOS */
+
+.no-favorites {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.no-favorites h2 {
+    margin-bottom: 12px;
+}
+
+.no-favorites p {
+    color: #777777;
+    margin-bottom: 25px;
+}
+
+
+/* BOTÓN */
+
+.favorites-button {
+    display: inline-block;
+
+    background: #2878e8;
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 5px;
+}
+
+.favorites-button:hover {
+    background: #1d65c1;
+}
+
+/* ==========================================
+   CONTACTO - DISEÑO COMPLETO
+========================================== */
+
+.contact-page {
+    background: #ffffff;
+    min-height: 650px;
+}
+
+.contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.contact-header {
+    margin-bottom: 30px;
+}
+
+.contact-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-header p {
+    color: #666666;
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   DOS COLUMNAS
+========================================== */
+
+.contact-content {
+    display: grid !important;
+
+    grid-template-columns: 1fr 0.9fr !important;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+.contact-form {
+    display: grid !important;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px 25px;
+
+    background: #ffffff;
+
+    padding: 5px 0;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    display: block;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e0e0e0;
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2878e8;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* ==========================================
+   ERRORES
+========================================== */
+
+.error-message {
+    display: block;
+
+    color: #d93025;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+.input-error {
+    border-color: #d93025 !important;
+}
+
+
+/* ==========================================
+   MENSAJE DE ÉXITO
+========================================== */
+
+.success-message {
+    grid-column: 1 / -1;
+
+    color: #16803c;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   BOTÓN
+========================================== */
+
+.submit-button {
+    width: 170px;
+
+    border: none;
+
+    background: #2878e8;
+
+    color: white;
+
+    padding: 13px 20px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background: #1d65c1;
+}
+
+
+/* ==========================================
+   INFORMACIÓN DE CONTACTO
+========================================== */
+
+.contact-info {
+    background: #f5f6fa;
+
+    border-radius: 12px;
+
+    padding: 30px;
+
+    min-height: 410px;
+}
+
+.contact-icon {
+    color: #2878e8;
+
+    font-size: 45px;
+
+    margin-bottom: 5px;
+}
+
+.contact-info h2 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+}
+
+.contact-description {
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   DATOS DE CONTACTO
+========================================== */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 18px;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+.contact-item-icon {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 28px;
+
+    color: #2878e8;
+
+    font-size: 20px;
+}
+
+.contact-item a {
+    color: #666666;
+
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   REDES SOCIALES
+========================================== */
+
+.social-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 21px !important;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #2878e8;
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* FACEBOOK */
+
+.social-facebook {
+    font-size: 24px;
+    padding-top: 4px;
+}
+
+
+/* INSTAGRAM */
+
+.social-instagram {
+    font-size: 28px;
+    line-height: 1;
+}
+
+
+/* TWITTER */
+
+.social-twitter {
+    font-size: 16px;
+}
+
+
+/* LINKEDIN */
+
+.social-linkedin {
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .contact-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .contact-container {
+        padding: 30px 20px;
+    }
+
+    .contact-header h1 {
+        font-size: 28px;
+    }
+
+    .submit-button {
+        width: 100%;
+    }
+
+}
+
+/* ==========================================
+   ADMINISTRACIÓN
+========================================== */
+
+.admin-page {
+    background: #f7f8fa;
+    min-height: 700px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+
+/* ENCABEZADO */
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.admin-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.admin-header p {
+    color: #666;
+}
+
+
+/* BOTONES */
+
+.admin-primary-button,
+.admin-secondary-button,
+.admin-edit-button,
+.admin-delete-button {
+    border: none;
+    border-radius: 5px;
+    padding: 11px 18px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.admin-primary-button {
+    background: #2878e8;
+    color: white;
+}
+
+.admin-primary-button:hover {
+    background: #1d65c1;
+}
+
+.admin-secondary-button {
+    background: #eeeeee;
+    color: #333;
+}
+
+.admin-edit-button {
+    background: #2878e8;
+    color: white;
+}
+
+.admin-delete-button {
+    background: #d93025;
+    color: white;
+}
+
+
+/* FORMULARIO */
+
+.admin-form-container {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 35px;
+}
+
+.admin-form-container h2 {
+    margin-bottom: 25px;
+}
+
+.admin-form-container form {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 20px 25px;
+}
+
+.admin-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-form-group.admin-full {
+    grid-column: 1 / -1;
+}
+
+.admin-form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
+    border-color: #2878e8;
+}
+
+.admin-form-group textarea {
+    resize: vertical;
+}
+
+.admin-error {
+    color: #d93025;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+
+/* BOTONES DEL FORMULARIO */
+
+.admin-form-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+
+/* LISTADO */
+
+.admin-list-section {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-list-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.admin-list-header h2 {
+    font-size: 22px;
+}
+
+#news-counter {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* NOTICIAS */
+
+.admin-news-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.admin-news-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 8px;
+}
+
+.admin-news-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.admin-news-image {
+    width: 130px;
+    height: 85px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+}
+
+.admin-news-info h3 {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.admin-news-info p {
+    color: #777;
+    font-size: 13px;
+}
+
+.admin-news-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+/* VACÍO */
+
+.admin-empty {
+    text-align: center;
+
+    padding: 50px;
+
+    color: #777;
+}
+
+
+/* OCULTO */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .admin-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .admin-form-container form {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form-group.admin-full {
+        grid-column: auto;
+    }
+
+    .admin-news-item {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .admin-news-actions {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .admin-container {
+        padding: 30px 20px;
+    }
+
+    .admin-news-info {
+        align-items: flex-start;
+    }
+
+    .admin-news-image {
+        width: 90px;
+        height: 70px;
+    }
+
+}
+
+/* ==========================================
+   VISTA PREVIA DE IMAGEN
+========================================== */
+
+.image-preview {
+    margin-top: 12px;
+}
+
+.image-preview img {
+    width: 180px;
+    height: 110px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    border: 1px solid #ddd;
+}

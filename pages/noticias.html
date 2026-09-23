@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Noticias | Noticias 360</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav>
+
+            <div class="logo">
+                Noticias <span>360</span>
+            </div>
+
+            <ul class="menu">
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+
+                <li>
+                    <a href="noticias.html">Noticias</a>
+                </li>
+
+                <li>
+                    <a href="favoritos.html">Favoritos</a>
+                </li>
+
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+
+            <button class="login-button">
+                Iniciar sesión
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main class="news-page">
+
+        <section class="news-container">
+
+            <div class="news-page-header">
+
+                <h1>
+                    Todas las noticias
+                </h1>
+
+                <p>
+                    Explora las últimas noticias y encuentra
+                    información de tu interés.
+                </p>
+
+            </div>
+
+
+            <!-- BUSCADOR -->
+
+            <div class="news-controls">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Buscar noticias..."
+                    >
+
+                    <button id="search-button">
+                        🔍
+                    </button>
+
+                </div>
+
+
+                <!-- CATEGORÍAS -->
+
+                <div class="categories">
+
+                    <button
+                        class="category-button active"
+                        data-category="Todas">
+                        Todas
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Tecnología">
+                        Tecnología
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Turismo">
+                        Turismo
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Educación">
+                        Educación
+                    </button>
+
+                    <button
+                        class="category-button"
+                        data-category="Negocios">
+                        Negocios
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTICIAS -->
+
+            <div
+                id="news-list"
+                class="news-grid">
+
+            </div>
+
+
+            <!-- PAGINACIÓN -->
+
+            <div class="pagination">
+
+                <button id="previous-page">
+                    ←
+                </button>
+
+                <button class="page-number active">
+                    1
+                </button>
+
+                <button class="page-number">
+                    2
+                </button>
+
+                <button class="page-number">
+                    3
+                </button>
+
+                <button class="page-number">
+                    4
+                </button>
+
+                <button id="next-page">
+                    →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Noticias 360.
+            Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/noticias.js"></script>
+
+</body>
+
+</html>
