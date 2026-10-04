@@ -1,0 +1,106 @@
+<section class="favoritos-container">
+
+  <header class="favoritos-header">
+
+    <h1>
+      Mis <span>Favoritos</span>
+    </h1>
+
+    <p>
+      Aquí encontrarás las noticias que guardaste.
+    </p>
+
+  </header>
+
+
+  @if (noticiasFavoritas.length > 0) {
+
+    <section class="favoritos-grid">
+
+      @for (noticia of noticiasFavoritas; track noticia.id) {
+
+        <article class="favorito-card">
+
+          @if (noticia.imagen.startsWith('data:')) {
+
+  <img
+    [src]="noticia.imagen"
+    [alt]="noticia.titulo"
+  >
+
+} @else {
+
+  <img
+    [src]="'assets/images/' + noticia.imagen"
+    [alt]="noticia.titulo"
+  >
+
+}
+
+          <div class="favorito-content">
+
+            <span class="categoria">
+              {{ noticia.categoria }}
+            </span>
+
+            <h2>
+              {{ noticia.titulo }}
+            </h2>
+
+            <p class="fecha">
+              {{ noticia.fecha }}
+            </p>
+
+            <p>
+              {{ noticia.descripcion }}
+            </p>
+
+            <div class="acciones">
+
+              <a
+                class="ver-mas"
+                [routerLink]="['/detalle', noticia.id]"
+              >
+                Ver más →
+              </a>
+
+              <button
+                type="button"
+                class="eliminar"
+                (click)="eliminarFavorito(noticia.id)"
+              >
+                Quitar
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      }
+
+    </section>
+
+  } @else {
+
+    <div class="sin-favoritos">
+
+      <h2>No tienes noticias favoritas</h2>
+
+      <p>
+        Regresa a noticias y agrega algunas a tus favoritos.
+      </p>
+
+      <a
+        routerLink="/noticias"
+        class="volver"
+      >
+        Explorar noticias
+      </a>
+
+    </div>
+
+  }
+
+</section>

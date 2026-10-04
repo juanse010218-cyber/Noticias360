@@ -4,7 +4,7 @@
         "categoria": "Tecnología",
         "titulo": "La inteligencia artificial está transformando el futuro",
         "fecha": "15 de agosto de 2026",
-        "imagen": "ia.jpg",
+        "imagen": "ia.JPG",
         "descripcion": "La inteligencia artificial continúa transformando diferentes sectores mediante nuevas herramientas y soluciones digitales.",
         "contenido": "Las nuevas tecnologías están generando nuevas oportunidades para empresas, instituciones educativas y usuarios."
     },
@@ -13,7 +13,7 @@
         "categoria": "Turismo",
         "titulo": "Los 5 destinos imperdibles de Colombia",
         "fecha": "15 de agosto de 2026",
-        "imagen": "turismo.jpg",
+        "imagen": "turismo.JPG",
         "descripcion": "Conoce algunos de los destinos más destacados para visitar en Colombia.",
         "contenido": "Colombia cuenta con diferentes destinos turísticos que ofrecen experiencias culturales, naturales y gastronómicas."
     },
@@ -22,7 +22,7 @@
         "categoria": "Educación",
         "titulo": "La educación digital abre nuevas oportunidades",
         "fecha": "15 de agosto de 2026",
-        "imagen": "educacion.jpg",
+        "imagen": "educacion.JPG",
         "descripcion": "Las nuevas herramientas digitales están transformando la educación.",
         "contenido": "La educación digital permite acceder a nuevos recursos y metodologías de aprendizaje."
     },

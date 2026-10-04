@@ -1,0 +1,151 @@
+<section class="contacto-container">
+
+  <div class="contacto-header">
+    <h1>Contacto</h1>
+
+    <p>
+      ¿Tienes alguna inquietud, sugerencia o comentario?
+      Escríbenos.
+    </p>
+  </div>
+
+  <form
+    #formulario="ngForm"
+    (ngSubmit)="enviarFormulario()"
+    class="contacto-form"
+  >
+
+    <div class="campo">
+
+      <label for="nombre">
+        Nombre
+      </label>
+
+      <input
+        id="nombre"
+        type="text"
+        name="nombre"
+        ngModel
+        required
+        #nombre="ngModel"
+        placeholder="Ingresa tu nombre"
+      >
+
+      @if (nombre.invalid && nombre.touched) {
+        <small>
+          El nombre es obligatorio.
+        </small>
+      }
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="correo">
+        Correo electrónico
+      </label>
+
+      <input
+        id="correo"
+        type="email"
+        name="correo"
+        ngModel
+        required
+        email
+        #correo="ngModel"
+        placeholder="ejemplo@correo.com"
+      >
+
+      @if (correo.invalid && correo.touched) {
+
+        <small>
+          @if (correo.errors?.['required']) {
+            El correo es obligatorio.
+          }
+
+          @if (correo.errors?.['email']) {
+            Ingresa un correo válido.
+          }
+        </small>
+
+      }
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="asunto">
+        Asunto
+      </label>
+
+      <input
+        id="asunto"
+        type="text"
+        name="asunto"
+        ngModel
+        required
+        #asunto="ngModel"
+        placeholder="¿Cuál es el motivo de tu mensaje?"
+      >
+
+      @if (asunto.invalid && asunto.touched) {
+        <small>
+          El asunto es obligatorio.
+        </small>
+      }
+
+    </div>
+
+
+    <div class="campo">
+
+      <label for="mensaje">
+        Mensaje
+      </label>
+
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        ngModel
+        required
+        #mensaje="ngModel"
+        rows="6"
+        placeholder="Escribe tu mensaje..."
+      ></textarea>
+
+      @if (mensaje.invalid && mensaje.touched) {
+        <small>
+          El mensaje es obligatorio.
+        </small>
+      }
+
+    </div>
+
+
+    <button
+      type="submit"
+      [disabled]="formulario.invalid"
+    >
+      Enviar mensaje
+    </button>
+
+  </form>
+
+
+  @if (enviado) {
+
+    <div class="mensaje-exito">
+
+      <strong>¡Mensaje enviado correctamente!</strong>
+
+      <p>
+        Gracias por contactarnos. Hemos recibido tu mensaje.
+      </p>
+
+    </div>
+
+  }
+
+</section>

@@ -1,0 +1,458 @@
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
+
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 30px 60px;
+}
+
+
+/* ================================
+   ENCABEZADO
+================================ */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.admin-header h1 {
+  margin: 0 0 10px;
+  font-size: 34px;
+  color: #111;
+}
+
+.admin-header p {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+
+/* ================================
+   BOTONES
+================================ */
+
+.btn-primary {
+  background: #287be5;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #1769cf;
+}
+
+.btn-primary:disabled {
+  background: #b8c3d1;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 11px 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #f5f5f5;
+}
+
+
+/* ================================
+   FORMULARIO
+================================ */
+
+.formulario-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 45px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-container h2 {
+  margin: 0 0 25px;
+  font-size: 25px;
+  color: #111;
+}
+
+
+/* ================================
+   GRID DEL FORMULARIO
+================================ */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 20px;
+}
+
+
+/* ================================
+   CAMPOS
+================================ */
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.campo label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #222;
+  font-weight: 500;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #d6d6d6;
+  border-radius: 7px;
+  background: #fff;
+  color: #222;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #287be5;
+  box-shadow: 0 0 0 3px rgba(40, 123, 229, 0.12);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+
+/* ================================
+   SELECTOR DE IMAGEN
+================================ */
+
+.campo input[type="file"] {
+  padding: 9px;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.campo input[type="file"]::file-selector-button {
+  background: #287be5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 14px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.campo input[type="file"]::file-selector-button:hover {
+  background: #1769cf;
+}
+
+
+/* ================================
+   VISTA PREVIA DE IMAGEN
+================================ */
+
+.vista-previa {
+  margin-top: 15px;
+  padding: 15px;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.vista-previa p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+}
+
+.vista-previa img {
+  display: block;
+  width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+
+/* ================================
+   ACCIONES DEL FORMULARIO
+================================ */
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+
+/* ================================
+   LISTA DE NOTICIAS
+================================ */
+
+.lista-container {
+  margin-top: 30px;
+}
+
+.lista-header {
+  margin-bottom: 20px;
+}
+
+.lista-header h2 {
+  margin: 0 0 6px;
+  font-size: 25px;
+  color: #111;
+}
+
+.lista-header p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+
+/* ================================
+   TARJETAS DE NOTICIAS
+================================ */
+
+.noticias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.noticia-item {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 22px;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ================================
+   IMAGEN DE LA NOTICIA
+================================ */
+
+.noticia-imagen {
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f1f1f1;
+}
+
+.noticia-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ================================
+   INFORMACIÓN DE LA NOTICIA
+================================ */
+
+.noticia-info {
+  min-width: 0;
+}
+
+.noticia-info .categoria {
+  display: inline-block;
+  background: #e8f1ff;
+  color: #287be5;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.noticia-info h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #111;
+}
+
+.noticia-info .fecha {
+  margin: 0 0 7px;
+  font-size: 13px;
+  color: #777;
+}
+
+.noticia-info .descripcion {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   BOTONES DE ACCIÓN
+================================ */
+
+.noticia-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-editar,
+.btn-eliminar {
+  border-radius: 6px;
+  padding: 9px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-editar {
+  background: #e8f1ff;
+  color: #287be5;
+  border: 1px solid #cfe0fa;
+}
+
+.btn-editar:hover {
+  background: #d8e8ff;
+}
+
+.btn-eliminar {
+  background: #fff0f0;
+  color: #d62828;
+  border: 1px solid #f3cccc;
+}
+
+.btn-eliminar:hover {
+  background: #ffe1e1;
+}
+
+
+/* ================================
+   SIN NOTICIAS
+================================ */
+
+.sin-noticias {
+  background: white;
+  border: 1px dashed #ccc;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+}
+
+.sin-noticias h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #222;
+}
+
+.sin-noticias p {
+  margin: 0 0 20px;
+  color: #777;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 800px) {
+
+  .admin-container {
+    padding: 40px 20px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-item {
+    grid-template-columns: 110px 1fr;
+  }
+
+  .noticia-imagen {
+    width: 110px;
+    height: 85px;
+  }
+
+  .noticia-acciones {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .admin-container {
+    padding: 30px 15px;
+  }
+
+  .formulario-container {
+    padding: 20px;
+  }
+
+  .admin-header h1 {
+    font-size: 28px;
+  }
+
+  .noticia-item {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-imagen {
+    width: 100%;
+    height: 180px;
+  }
+
+  .noticia-acciones {
+    width: 100%;
+  }
+
+  .noticia-acciones button {
+    flex: 1;
+  }
+
+}

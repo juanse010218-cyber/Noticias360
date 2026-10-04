@@ -1,0 +1,154 @@
+<section class="noticias-container">
+
+  <header class="noticias-header">
+
+    <h1>
+      Noticias <span>360</span>
+    </h1>
+
+    <p>
+      Noticias que te conectan con la información que necesitas.
+    </p>
+
+  </header>
+
+
+  <section class="filtros">
+
+  <div class="buscador">
+
+    <input
+      type="text"
+      placeholder="Buscar noticias..."
+      [(ngModel)]="busqueda"
+    >
+
+    <span>🔎</span>
+
+  </div>
+
+
+  <div class="categorias">
+
+    <button
+      type="button"
+      [class.categoria-activa]="categoriaSeleccionada === 'Todas'"
+      (click)="filtrarPorCategoria('Todas')"
+    >
+      Todas
+    </button>
+
+    <button
+      type="button"
+      [class.categoria-activa]="categoriaSeleccionada === 'Tecnología'"
+      (click)="filtrarPorCategoria('Tecnología')"
+    >
+      Tecnología
+    </button>
+
+    <button
+      type="button"
+      [class.categoria-activa]="categoriaSeleccionada === 'Turismo'"
+      (click)="filtrarPorCategoria('Turismo')"
+    >
+      Turismo
+    </button>
+
+    <button
+      type="button"
+      [class.categoria-activa]="categoriaSeleccionada === 'Educación'"
+      (click)="filtrarPorCategoria('Educación')"
+    >
+      Educación
+    </button>
+
+    <button
+      type="button"
+      [class.categoria-activa]="categoriaSeleccionada === 'Negocios'"
+      (click)="filtrarPorCategoria('Negocios')"
+    >
+      Negocios
+    </button>
+
+  </div>
+
+</section>
+
+  <section class="noticias-grid">
+
+    @for (noticia of noticiasFiltradas; track noticia.id) {
+
+      <article class="noticia-card">
+
+        @if (noticia.imagen.startsWith('data:')) {
+
+  <img
+    [src]="noticia.imagen"
+    [alt]="noticia.titulo"
+  >
+
+} @else {
+
+  <img
+    [src]="'assets/images/' + noticia.imagen"
+    [alt]="noticia.titulo"
+  >
+
+}
+
+        <div class="noticia-content">
+
+          <span class="categoria">
+            {{ noticia.categoria }}
+          </span>
+
+          <h2>
+            {{ noticia.titulo }}
+          </h2>
+
+          <p class="fecha">
+            {{ noticia.fecha }}
+          </p>
+
+          <p class="descripcion">
+            {{ noticia.descripcion }}
+          </p>
+
+
+          <div class="acciones">
+
+            <button
+              type="button"
+              class="favorito"
+              [class.favorito-activo]="esFavorito(noticia.id)"
+              (click)="alternarFavorito(noticia.id)"
+            >
+
+              {{ esFavorito(noticia.id)
+                ? '♥ Favorito'
+                : '♡ Favoritos'
+              }}
+
+            </button>
+
+
+          
+           <a
+           class="ver-mas"
+          [routerLink]="['/detalle', noticia.id]"
+            >
+              Ver más →
+              </a>
+        
+
+          </div>
+
+        </div>
+
+      </article>
+
+    }
+
+  </section>
+
+</section>

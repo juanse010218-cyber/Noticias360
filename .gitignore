@@ -1,0 +1,8 @@
+# Proyecto Angular
+/angular/node_modules/
+/angular/dist/
+/angular/.angular/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db

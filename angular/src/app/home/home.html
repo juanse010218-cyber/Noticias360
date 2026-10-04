@@ -1,0 +1,206 @@
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-contenido">
+
+    <span class="hero-etiqueta">
+      INFORMACIÓN EN UN SOLO LUGAR
+    </span>
+
+    <h1>
+      Noticias <span>360</span>
+    </h1>
+
+    <p>
+      Noticias que te conectan con la información que necesitas.
+    </p>
+
+    <div class="hero-botones">
+
+      <a
+        routerLink="/noticias"
+        class="btn-primary"
+      >
+        Explorar noticias
+      </a>
+
+      <a
+        routerLink="/contacto"
+        class="btn-secondary"
+      >
+        Contáctanos
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- NOTICIAS DESTACADAS -->
+<section class="destacadas">
+
+  <div class="seccion-header">
+
+    <div>
+      <span class="seccion-etiqueta">
+        ACTUALIDAD
+      </span>
+
+      <h2>
+        Noticias destacadas
+      </h2>
+
+      <p>
+        Conoce algunas de las noticias disponibles en Noticias 360.
+      </p>
+    </div>
+
+    <a
+      routerLink="/noticias"
+      class="ver-todas"
+    >
+      Ver todas →
+    </a>
+
+  </div>
+
+
+  <div class="noticias-grid">
+
+    @for (noticia of noticiasDestacadas; track noticia.id) {
+
+      <article class="noticia-card">
+
+        <div class="imagen-container">
+
+          @if (noticia.imagen.startsWith('data:')) {
+
+            <img
+              [src]="noticia.imagen"
+              [alt]="noticia.titulo"
+            >
+
+          } @else {
+
+            <img
+              [src]="'assets/images/' + noticia.imagen"
+              [alt]="noticia.titulo"
+            >
+
+          }
+
+        </div>
+
+
+        <div class="noticia-contenido">
+
+          <span class="categoria">
+            {{ noticia.categoria }}
+          </span>
+
+          <h3>
+            {{ noticia.titulo }}
+          </h3>
+
+          <p class="fecha">
+            {{ noticia.fecha }}
+          </p>
+
+          <p class="descripcion">
+            {{ noticia.descripcion }}
+          </p>
+
+          <a
+            [routerLink]="['/detalle', noticia.id]"
+            class="leer-mas"
+          >
+            Leer noticia →
+          </a>
+
+        </div>
+
+      </article>
+
+    }
+
+  </div>
+
+</section>
+
+
+<!-- LLAMADO A LA ACCIÓN -->
+<section class="cta">
+
+  <div class="cta-contenido">
+
+    <h2>
+      ¿Tienes algo que contarnos?
+    </h2>
+
+    <p>
+      Ponte en contacto con nosotros y comparte tus comentarios,
+      preguntas o sugerencias.
+    </p>
+
+    <a
+      routerLink="/contacto"
+      class="btn-cta"
+    >
+      Ir a contacto
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-contenido">
+
+    <div>
+      <h3>
+        Noticias <span>360</span>
+      </h3>
+
+      <p>
+        Información que te conecta con la actualidad.
+      </p>
+    </div>
+
+
+    <div class="footer-enlaces">
+
+      <a routerLink="/noticias">
+        Noticias
+      </a>
+
+      <a routerLink="/favoritos">
+        Favoritos
+      </a>
+
+      <a routerLink="/contacto">
+        Contacto
+      </a>
+
+      <a routerLink="/admin">
+        Administración
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <p>
+      © 2026 Noticias 360. Todos los derechos reservados.
+    </p>
+
+  </div>
+
+</footer>

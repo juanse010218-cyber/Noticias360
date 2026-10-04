@@ -1,0 +1,301 @@
+<section class="admin-container">
+
+  <!-- Encabezado -->
+  <div class="admin-header">
+    <div>
+      <h1>Administración de noticias</h1>
+      <p>Gestiona las noticias de Noticias 360.</p>
+    </div>
+
+    <button
+      type="button"
+      class="btn-primary"
+      (click)="abrirFormulario()"
+    >
+      + Nueva noticia
+    </button>
+  </div>
+
+
+  <!-- Formulario -->
+  @if (mostrarFormulario) {
+
+    <div class="formulario-container">
+
+      <h2>
+        {{ editando ? 'Editar noticia' : 'Crear noticia' }}
+      </h2>
+
+      <form
+        #formulario="ngForm"
+        (ngSubmit)="guardarNoticia()"
+      >
+
+        <!-- Título -->
+        <div class="form-grid">
+
+          <div class="campo">
+            <label for="titulo">Título*</label>
+
+            <input
+              id="titulo"
+              type="text"
+              name="titulo"
+              [(ngModel)]="noticiaActual.titulo"
+              placeholder="Título de la noticia"
+              required
+            >
+          </div>
+
+
+          <!-- Categoría -->
+          <div class="campo">
+            <label for="categoria">Categoría*</label>
+
+            <select
+              id="categoria"
+              name="categoria"
+              [(ngModel)]="noticiaActual.categoria"
+              required
+            >
+              <option value="">Selecciona una categoría</option>
+              <option value="Tecnología">Tecnología</option>
+              <option value="Turismo">Turismo</option>
+              <option value="Educación">Educación</option>
+              <option value="Negocios">Negocios</option>
+            </select>
+          </div>
+
+
+          <!-- Fecha -->
+          <div class="campo">
+            <label for="fecha">Fecha*</label>
+
+            <input
+              id="fecha"
+              type="date"
+              name="fecha"
+              [(ngModel)]="noticiaActual.fecha"
+              required
+            >
+          </div>
+
+
+          <!-- Imagen -->
+          <div class="campo">
+            <label for="imagen">Imagen*</label>
+
+            <input
+              id="imagen"
+              type="file"
+              name="imagen"
+              accept="image/*"
+              (change)="seleccionarImagen($event)"
+              required
+            >
+
+            @if (noticiaActual.imagen) {
+
+              <div class="vista-previa">
+
+                <p>Vista previa:</p>
+
+                <img
+                  [src]="
+                    noticiaActual.imagen.startsWith('data:')
+                      ? noticiaActual.imagen
+                      : 'assets/images/' + noticiaActual.imagen
+                  "
+                  alt="Vista previa de la noticia"
+                >
+
+              </div>
+
+            }
+
+          </div>
+
+        </div>
+
+
+        <!-- Descripción -->
+        <div class="campo">
+          <label for="descripcion">Descripción*</label>
+
+          <textarea
+            id="descripcion"
+            name="descripcion"
+            [(ngModel)]="noticiaActual.descripcion"
+            placeholder="Escribe una breve descripción de la noticia"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+
+
+        <!-- Contenido -->
+        <div class="campo">
+          <label for="contenido">Contenido*</label>
+
+          <textarea
+            id="contenido"
+            name="contenido"
+            [(ngModel)]="noticiaActual.contenido"
+            placeholder="Escribe el contenido completo de la noticia"
+            rows="8"
+            required
+          ></textarea>
+        </div>
+
+
+        <!-- Botones -->
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="btn-primary"
+            [disabled]="formulario.invalid"
+          >
+            {{ editando ? 'Guardar cambios' : 'Guardar noticia' }}
+          </button>
+
+          <button
+            type="button"
+            class="btn-secondary"
+            (click)="cancelar()"
+          >
+            Cancelar
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  }
+
+
+  <!-- Lista de noticias -->
+  <div class="lista-container">
+
+    <div class="lista-header">
+
+      <div>
+        <h2>Noticias registradas</h2>
+
+        <p>
+          Total de noticias:
+          <strong>{{ noticias.length }}</strong>
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- Cuando existen noticias -->
+    @if (noticias.length > 0) {
+
+      <div class="noticias-lista">
+
+        @for (noticia of noticias; track noticia.id) {
+
+          <article class="noticia-item">
+
+            <!-- Imagen -->
+            <div class="noticia-imagen">
+
+              @if (noticia.imagen.startsWith('data:')) {
+
+                <img
+                  [src]="noticia.imagen"
+                  [alt]="noticia.titulo"
+                >
+
+              } @else {
+
+                <img
+                  [src]="'assets/images/' + noticia.imagen"
+                  [alt]="noticia.titulo"
+                >
+
+              }
+
+            </div>
+
+
+            <!-- Información -->
+            <div class="noticia-info">
+
+              <span class="categoria">
+                {{ noticia.categoria }}
+              </span>
+
+              <h3>
+                {{ noticia.titulo }}
+              </h3>
+
+              <p class="fecha">
+                {{ noticia.fecha }}
+              </p>
+
+              <p class="descripcion">
+                {{ noticia.descripcion }}
+              </p>
+
+            </div>
+
+
+            <!-- Acciones -->
+            <div class="noticia-acciones">
+
+              <button
+                type="button"
+                class="btn-editar"
+                (click)="editarNoticia(noticia)"
+              >
+                Editar
+              </button>
+
+              <button
+                type="button"
+                class="btn-eliminar"
+                (click)="eliminarNoticia(noticia.id)"
+              >
+                Eliminar
+              </button>
+
+            </div>
+
+          </article>
+
+        }
+
+      </div>
+
+    } @else {
+
+      <!-- Cuando no hay noticias -->
+      <div class="sin-noticias">
+
+        <h3>No hay noticias registradas</h3>
+
+        <p>
+          Crea una nueva noticia para comenzar.
+        </p>
+
+        <button
+          type="button"
+          class="btn-primary"
+          (click)="abrirFormulario()"
+        >
+          + Crear noticia
+        </button>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>
