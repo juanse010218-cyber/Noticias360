@@ -103,29 +103,51 @@ Las noticias administradas se almacenan mediante `localStorage`.
 
 ```text
 Noticias360/
+├── src/
+│   ├── app/
+│   │   ├── components/                # Componentes reutilizables e independientes
+│   │   │   ├── contacto/              # Módulo de formulario de interacción
+│   │   │   │   ├── contacto.component.css
+│   │   │   │   ├── contacto.component.html
+│   │   │   │   └── contacto.component.ts
+│   │   │   ├── detalle/               # Módulo para lectura extendida de noticias
+│   │   │   │   ├── detalle.component.css
+│   │   │   │   ├── detalle.component.html
+│   │   │   │   └── detalle.component.ts
+│   │   │   ├── favoritos/             # Módulo de noticias guardadas
+│   │   │   │   ├── favoritos.component.css
+│   │   │   │   ├── favoritos.component.html
+│   │   │   │   └── favoritos.component.ts
+│   │   │   └── noticias/              # Módulo principal (Feed, catálogo y filtros)
+│   │   │       ├── noticias.component.css
+│   │   │       ├── noticias.component.html
+│   │   │       └── noticias.component.ts
+│   │   │
+│   │   ├── administracion/            # Módulo de gestión interna (CRUD)
+│   │   │   ├── administracion.component.css
+│   │   │   ├── administracion.component.html
+│   │   │   └── administracion.component.ts
+│   │   │
+│   │   ├── models/                    # Definición de interfaces y tipos de datos
+│   │   │   └── noticia.model.ts
+│   │   │
+│   │   ├── services/                  # Lógica de negocio e inyección de datos
+│   │   │   └── noticias.service.ts
+│   │   │
+│   │   ├── app.component.css          # Estilos globales de la estructura raíz
+│   │   ├── app.component.html         # Navbar, router-outlet y layout principal
+│   │   ├── app.component.ts           # Componente raíz
+│   │   ├── app.config.ts              # Configuración de proveedores y enrutamiento
+│   │   └── app.routes.ts              # Definición de rutas principales de la SPA
+│   │
+│   ├── assets/                        # Recursos estáticos
+│   │   ├── images/                    # Imágenes locales del sistema
+│   │   └── noticias.json              # Mapeo inicial de datos
+│   │
+│   ├── index.html                     # HTML principal de entrada
+│   ├── main.ts                        # Punto de entrada para el arranque (Bootstrapping)
+│   └── styles.css                     # Hojas de estilo globales y variables CSS
 │
-├── assets/
-│   ├── icons/
-│   └── images/
-│
-├── css/
-│   └── styles.css
-│
-├── data/
-│   └── noticias.json
-│
-├── js/
-│   ├── admin.js
-│   ├── contacto.js
-│   ├── detalle.js
-│   ├── favoritos.js
-│   └── noticias.js
-│
-├── pages/
-│   ├── admin.html
-│   ├── contacto.html
-│   ├── detalle.html
-│   ├── favoritos.html
-│   └── noticias.html
-│
-└── index.html
+├── angular.json                       # Configuración del CLI de Angular y Build
+├── package.json                       # Gestión de dependencias y scripts de ejecución
+└── tsconfig.json                      # Configuración del compilador de TypeScript
